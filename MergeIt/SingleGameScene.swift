@@ -23,6 +23,7 @@ class SingleGameScene: SKScene, BoardObserver {
     var score : Int = 0
     var lastTouchX : Int?
     var lastTouchY : Int?
+    var mergeInProcess = false
     
     func setup(delegate: GameDelegate, board: Board, startTime: Int, score: Int) {
         self.gameDelegate = delegate
@@ -104,17 +105,21 @@ class SingleGameScene: SKScene, BoardObserver {
             gameDelegate?.gameCompleted(board: boardView!.board!, completed: false, seconds: timeCounter, score: score)
         }else {
             if boardView!.contains(touchLocation) {
-                if let block = boardView!.blockAtPosition(CGPoint(x: touchLocation.x-boardView!.position.x,
-                                                                  y: touchLocation.y-boardView!.position.y)) {
-                    if boardView!.board!.isMergePossible(block:block) {
-                        score = score + boardView!.board!.merge(block: block)
-                        displayScore()
-                        DispatchQueue.main.asyncAfter(deadline: .now() +  0.75) {
-                            self.boardView!.board!.dropBlocks()
-                        }
-                        DispatchQueue.main.asyncAfter(deadline: .now() +  1.5) {
-                            self.boardView!.board!.addNewBlocks()
-                            self.processGameState()
+                if !mergeInProcess {
+                    if let block = boardView!.blockAtPosition(CGPoint(x: touchLocation.x-boardView!.position.x,
+                                                                      y: touchLocation.y-boardView!.position.y)) {
+                        if boardView!.board!.isMergePossible(block:block) {
+                            mergeInProcess = true
+                            score = score + boardView!.board!.merge(block: block)
+                            displayScore()
+                            DispatchQueue.main.asyncAfter(deadline: .now() +  0.75) {
+                                self.boardView!.board!.dropBlocks()
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now() +  1.5) {
+                                self.boardView!.board!.addNewBlocks()
+                                self.processGameState()
+                                self.mergeInProcess = false
+                            }
                         }
                     }
                 }
