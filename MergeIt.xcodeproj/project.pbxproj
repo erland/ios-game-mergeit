@@ -26,6 +26,8 @@
 		DC902D3E22FA9AFE00436793 /* SelectGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC902D3D22FA9AFE00436793 /* SelectGameScene.swift */; };
 		DC902D4022FA9B1500436793 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC902D3F22FA9B1500436793 /* Position.swift */; };
 		DC902D4222FA9B4300436793 /* LevelStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC902D4122FA9B4300436793 /* LevelStorage.swift */; };
+		DCD4848422FB457100079F24 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DCD4848622FB457100079F24 /* Localizable.strings */; };
+		DCD4848922FB57B700079F24 /* SKScene+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD4848822FB57B700079F24 /* SKScene+Localization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,9 @@
 		DC902D3D22FA9AFE00436793 /* SelectGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectGameScene.swift; sourceTree = "<group>"; };
 		DC902D3F22FA9B1500436793 /* Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		DC902D4122FA9B4300436793 /* LevelStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelStorage.swift; sourceTree = "<group>"; };
+		DCD4848522FB457100079F24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DCD4848722FB459000079F24 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DCD4848822FB57B700079F24 /* SKScene+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+Localization.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +107,8 @@
 				DC902D2022FA9A1C00436793 /* Assets.xcassets */,
 				DC902D2222FA9A1C00436793 /* LaunchScreen.storyboard */,
 				DC902D2522FA9A1C00436793 /* Info.plist */,
+				DCD4848622FB457100079F24 /* Localizable.strings */,
+				DCD4848822FB57B700079F24 /* SKScene+Localization.swift */,
 			);
 			path = MergeIt;
 			sourceTree = "<group>";
@@ -148,6 +155,7 @@
 			knownRegions = (
 				en,
 				Base,
+				sv,
 			);
 			mainGroup = DC902D0722FA9A1C00436793;
 			productRefGroup = DC902D1122FA9A1C00436793 /* Products */;
@@ -167,6 +175,7 @@
 				DC902D3C22FA9AF300436793 /* SelectGameScene.sks in Resources */,
 				DC902D3922FA9ADD00436793 /* SingleGameOverScene.sks in Resources */,
 				DC902D1F22FA9A1C00436793 /* Main.storyboard in Resources */,
+				DCD4848422FB457100079F24 /* Localizable.strings in Resources */,
 				DC902D1622FA9A1C00436793 /* SingleGameScene.sks in Resources */,
 				DC902D2122FA9A1C00436793 /* Assets.xcassets in Resources */,
 				DC902D2422FA9A1C00436793 /* LaunchScreen.storyboard in Resources */,
@@ -185,6 +194,7 @@
 				DC902D4022FA9B1500436793 /* Position.swift in Sources */,
 				DC902D3422FA9AB300436793 /* Block.swift in Sources */,
 				DC902D1A22FA9A1C00436793 /* SingleGameScene.swift in Sources */,
+				DCD4848922FB57B700079F24 /* SKScene+Localization.swift in Sources */,
 				DC902D3622FA9ABF00436793 /* GameDelegate.swift in Sources */,
 				DC902D2C22FA9A9500436793 /* Array2D.swift in Sources */,
 				DC902D3122FA9AB300436793 /* Board.swift in Sources */,
@@ -215,6 +225,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		DCD4848622FB457100079F24 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCD4848522FB457100079F24 /* en */,
+				DCD4848722FB459000079F24 /* sv */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -222,6 +241,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -283,6 +303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -19,6 +19,10 @@ class SingleGameOverScene: SKScene {
     var score: Int?
     var seconds: Int?
     
+    override func sceneDidLoad() {
+        localize()
+    }
+
     func setup(delegate: GameDelegate, board: Board, seconds: Int, score: Int) {
         self.gameDelegate = delegate
         self.seconds = seconds
@@ -30,7 +34,7 @@ class SingleGameOverScene: SKScene {
         self.boardName?.text = board.name
         self.scoreText = childNode(withName:"score") as? SKLabelNode
         self.boardView?.setup(board: board)
-        scoreText?.text = "Score: \(score)"
+        scoreText?.text = "\(NSLocalizedString("score", comment: "score")): \(score)"
         
     }
     

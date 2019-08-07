@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  MergeIt
+
+  Created by Erland Isaksson on 2019-08-07.
+  Copyright © 2019 Erland Isaksson. All rights reserved.
+*/
+"selectMode" = "Select game mode";
+"newGame" = "New game";
+"previousGame" = "Previous game";
+"gameOver" = "Game Over!";
+"score" = "Score";
+"instructionText" = "Click cell to merge connected \ncells with same number";
+"record" = "Record";
+"pause" = "Continue later";
+"quit" = "Quit";

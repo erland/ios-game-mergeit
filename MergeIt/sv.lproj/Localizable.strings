@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  MergeIt
+
+  Created by Erland Isaksson on 2019-08-07.
+  Copyright © 2019 Erland Isaksson. All rights reserved.
+*/
+"selectMode" = "Välj typ av spel";
+"newGame" = "Nytt spel";
+"previousGame" = "Påbörjat spel";
+"gameOver" = "Game Over!";
+"score" = "Poäng";
+"instructionText" = "Välj cell för att slå ihop anslutande \nceller med samma nummer";
+"record" = "Rekord";
+"pause" = "Fortsätt senare";
+"quit" = "Avsluta";
+

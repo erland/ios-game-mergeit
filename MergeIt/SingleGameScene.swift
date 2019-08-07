@@ -60,6 +60,10 @@ class SingleGameScene: SKScene, BoardObserver {
         boardView?.board?.detachObserver(self)
     }
     
+    override func sceneDidLoad() {
+        localize()
+    }
+
     override func didMove(to view: SKView) {
         print("Moved to game scene")
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
@@ -90,7 +94,7 @@ class SingleGameScene: SKScene, BoardObserver {
         if record != nil && score>record! {
             scoreText?.fontColor = .green
         }
-        scoreText?.text = "Score: \(score)"
+        scoreText?.text = "\(NSLocalizedString("score", comment: "score")): \(score)"
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
