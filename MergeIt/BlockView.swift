@@ -15,7 +15,6 @@ class BlockView : SKSpriteNode, BlockObserver {
 
     init(block: Block, cellSize: CGFloat) {
         self.cellSize = cellSize
-        print("Creating block \(block.number) with cellSize=\(cellSize)")
         self.block = block
         let texture = SKTexture(imageNamed: "block\(block.number)")
         super.init(texture: texture, color: UIColor.black, size: CGSize(width: cellSize-1, height: cellSize-1))

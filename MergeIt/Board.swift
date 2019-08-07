@@ -158,7 +158,6 @@ class Board {
     }
     
     func dropBlocks() {
-        debugBoard(debug: true)
         var dropped = false
         for offsetY in 2...height {
             for x in 0..<width {
