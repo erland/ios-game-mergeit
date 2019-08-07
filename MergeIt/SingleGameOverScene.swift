@@ -14,11 +14,10 @@ class SingleGameOverScene: SKScene {
     var boardView: BoardView?
     var openedTime: TimeInterval?
     var status: SKLabelNode?
-    var completedIn: SKLabelNode?
     var scoreText: SKLabelNode?
     var boardName: SKLabelNode?
-    var seconds: Int?
     var score: Int?
+    var seconds: Int?
     
     func setup(delegate: GameDelegate, board: Board, seconds: Int, score: Int) {
         self.gameDelegate = delegate
@@ -29,18 +28,8 @@ class SingleGameOverScene: SKScene {
         self.status = childNode(withName:"status") as? SKLabelNode
         self.boardName = childNode(withName:"boardName") as? SKLabelNode
         self.boardName?.text = board.name
-        self.completedIn = childNode(withName:"completedIn") as? SKLabelNode
         self.scoreText = childNode(withName:"score") as? SKLabelNode
         self.boardView?.setup(board: board)
-        status?.text = "Congratulations!"
-        let hours = Int(seconds/3600)
-        let minutes = String(format: "%02d",Int((seconds%3600)/60))
-        let seconds = String(format: "%02d",Int(seconds%60))
-        if hours == 0 {
-            completedIn?.text = "Completed in: \(minutes):\(seconds)"
-        }else {
-            completedIn?.text = "Completed in: \(hours):\(minutes):\(seconds)"
-        }
         scoreText?.text = "Score: \(score)"
         
     }
