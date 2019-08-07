@@ -112,13 +112,13 @@ class SingleGameScene: SKScene, BoardObserver {
                             mergeInProcess = true
                             score = score + boardView!.board!.merge(block: block)
                             displayScore()
-                            DispatchQueue.main.asyncAfter(deadline: .now() +  0.75) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() +  0.6) {
                                 self.boardView!.board!.dropBlocks()
-                            }
-                            DispatchQueue.main.asyncAfter(deadline: .now() +  1.5) {
-                                self.boardView!.board!.addNewBlocks()
-                                self.processGameState()
-                                self.mergeInProcess = false
+                                DispatchQueue.main.asyncAfter(deadline: .now() +  0.5) {
+                                    self.boardView!.board!.addNewBlocks()
+                                    self.processGameState()
+                                    self.mergeInProcess = false
+                                }
                             }
                         }
                     }

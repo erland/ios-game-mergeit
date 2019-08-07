@@ -105,7 +105,7 @@ class BoardView : SKSpriteNode, BoardObserver {
     
     func blockRemoved(_ block: Block) {
         if let view = viewForBlock(block) {
-            view.run(SKAction.sequence([SKAction.fadeAlpha(to: 0.0, duration: 0.5),SKAction.run {
+            view.run(SKAction.sequence([SKAction.fadeAlpha(to: 0.0, duration: 0.4),SKAction.run {
                 view.removeFromParent()
                 }]))
         }

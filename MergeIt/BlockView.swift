@@ -39,7 +39,7 @@ class BlockView : SKSpriteNode, BlockObserver {
         let positionY = -CGFloat(block.y)*cellSize-(cellSize)/2.0
         if self.numberLabel.text != "\(block.number)" {
             if self.numberLabel.text != nil {
-                run(SKAction.sequence([SKAction.wait(forDuration: 0.5),SKAction.run() {
+                run(SKAction.sequence([SKAction.wait(forDuration: 0.4),SKAction.run() {
                     self.numberLabel.text = "\(block.number)"
                     self.texture = SKTexture(imageNamed: "block\(block.number)")
                     }]))
@@ -51,7 +51,7 @@ class BlockView : SKSpriteNode, BlockObserver {
         if position != CGPoint.zero {
             let currentYPos = Int((position.y+cellSize/2.0)/cellSize)
             if currentYPos != block.y {
-                run(SKAction.move(to: CGPoint(x: positionX, y: positionY), duration: 0.5))
+                run(SKAction.move(to: CGPoint(x: positionX, y: positionY), duration: 0.4))
             }else {
                 self.position = CGPoint(x: positionX, y: positionY)
             }
